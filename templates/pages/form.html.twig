@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% include '/components/header.html.twig' %}
+<html>
+{% block stylesheets %}
+            
+        {% endblock %}
+
+        {% block javascripts %}
+            
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">Ajouter une nouvelle Recette</h1>
+                <div class="formWrapp m-3 row ">
+                    <div class="p-4 m-3 d-flex justify-content-center">
+                    {{form_start(formRecipe, {"attr":{"novalidate":"novalid"}})}}
+                    {{form_row(formRecipe.title)}}
+                    {{form_row(formRecipe.content)}}
+                    {{form_row(formRecipe.preparation_Time)}}
+                    {{form_row(formRecipe.preparation_Cook)}}
+                    {{form_row(formRecipe.ingredients)}}
+                    {{form_row(formRecipe.steps)}}
+                    {{form_row(formRecipe.allergens)}}
+                    {{form_row(formRecipe.regimes)}}
+                    <button class="p-2  btn btn-success" type="submit">Publier</button>
+                {{form_end(formRecipe)}}
+                </div>
+                </div>
+        </div>
+        {% block body %}{% endblock %}
+{% include '/components/footer.html.twig' %}
+    </body>
+</html>

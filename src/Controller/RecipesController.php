@@ -15,22 +15,19 @@ class RecipesController  extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function GetHome():Response
+    public function index(ManagerRegistry $doctrine): Response
     {
-        
-        return $this->render('/pages/home.html.twig');
-    }
-    /**
-     * @Route("/recettes", name="recipes")
-     */
-    public function Recipes():Response
-    {
-        
-        return $this->render('/pages/home.html.twig');
+        $repository = $doctrine->getRepository(Recipe::class);
+
+        $recipes = $repository->findAll();//Seleclt * FROM 'post';
+
+        dump($recipes);
+
+        return $this->render("/pages/home.html.twig", ["Recipes" => $recipes]);
     }
 
     /**
-     * @Route("/recettes/new", name="recipes_new")
+     * @Route("/recettes/ajout")
      */
     public function RecipesAdd(Request $request, ManagerRegistry $doctrine):Response
     {   
@@ -38,14 +35,30 @@ class RecipesController  extends AbstractController
         $recipe = new Recipe();
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValide()){
+        if($form->isSubmitted() && $form->isValid()){
             $em = $doctrine->getManager();
             $em->persist($recipe);
             $em->flush();
-            return $this->redirectToRoute("recipes");
+            dump($request);
+            return $this->redirectToRoute("home");
         }
         return $this->render('/pages/form.html.twig', [
             "formRecipe" => $form->createView()
         ]);
+    }
+    /**
+    * @Route("/recettes/{id}", name="recettes")
+    */
+    public function read($id, ManagerRegistry $doctrine): Response
+
+    {   $repository = $doctrine->getRepository(Recipe::class);
+
+        $recipe = $repository->find($id);//Seleclt * FROM 'post';
+        
+        dump($recipe);
+        
+         return $this->render('/pages/recipe.html.twig', [
+        'Recipe' => $recipe,
+    ]);
     }
 }

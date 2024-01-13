@@ -1,0 +1,77 @@
+/**Colors**/
+/* SCSS RGB *
+$caf-noir: rgba(86, 58, 34, 1);
+$lion: rgba(196, 158, 114, 1);
+$silver: rgba(172, 161, 156, 1);
+$platinum: rgba(219, 219, 219, 1);
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.SectHome {
+    height: auto;
+    margin: 2em;
+}
+.HomeSectOne{
+    margin: 3em;
+    padding: 1em;
+    height: auto;
+    background-color: rgba(219, 219, 219, 0.3);
+    padding: 2.5em;
+    border-radius: 5%;
+}
+.ArticlesWrapp {
+    height: auto;
+    background-color: rgba(86, 58, 34, 0.1);
+}
+
+/*SectHome Navbar*/
+.SectHome .navbar {
+    font-size: calc(2em - 10px);
+}
+.HomeSectOneNav  a{
+    color:rgba(196, 158, 114, 1);
+}
+
+/*SectRecomm*/
+.SectComment{
+    height: 50vh;
+}
+.SectCommentImg {
+    height: calc(20em - 5px);
+    width: auto;
+}
+/*Stars*/
+.Stars {
+    color: yellow;
+}
+
+/*SectCommentWrapp*/
+.SectCommentWrapp {
+    background-color: rgba(86, 58, 34, 0.2);
+    color: whitesmoke;
+    padding: 3em;
+}
+/*SectCarouselComments*/
+.SectCarouselComments {
+    height: 50vh;
+    background-color: rgba(86, 58, 34, 0.2);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    width: 100%;
+    padding: 2em;
+}
+.SectCarouselComments div {
+    height: calc(40vh);
+    width: calc(45vh);
+    background-color:rgba(196, 158, 114, 1);
+    margin: 0.5em;
+}
+/*SectCommentPict*/
+.SectCommentPict {
+    height:calc(30vh - 5px);
+    
+
+}

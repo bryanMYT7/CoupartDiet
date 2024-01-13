@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,33 +10,56 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Recipe
 {
+    
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
-
+    /**
+     * @Assert\NotBlank(message="Le champ ne peut pas être vide")
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 255,
+     *      minMessage = "Le contenu doit être compris entre 5 et 255 caractères",
+     *      maxMessage = "Le contenu doit être compris entre 5 et 255 caractères"
+     * )
+     */
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $title;
-
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le champ ne peut pas être vide")
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 900,
+     *      minMessage = "Le contenu doit être compris entre 5 et 900 caractères",
+     *      maxMessage = "Le contenu doit être compris entre 5 et 900 caractères"
+     * )
+     */
+    /**
+     * @ORM\Column(type="string", length=900)
      */
     private $content;
-
+     /**
+     * @Assert\NotBlank(message="Le champ ne peut pas être vide")
+     */
     /**
      * @ORM\Column(type="integer")
      */
     private $preparation_Time;
-
+    /**
+     * @Assert\NotBlank(message="Le champ ne peut pas être vide")
+     */
     /**
      * @ORM\Column(type="integer")
      */
     private $preparation_Cook;
-
+        /**
+     * @Assert\NotBlank(message="Le champ ne peut pas être vide")
+     */
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -57,6 +80,10 @@ class Recipe
      */
     private $regimes;
 
+     /**
+     * @ORM\Column(type="string",nullable = false, length=255)
+     */
+    private $category;
     
 
     public function getId(): ?int
@@ -164,6 +191,27 @@ class Recipe
     public function setRegimes($regimes)
     {
         $this->regimes = $regimes;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of category
+     */ 
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set the value of category
+     *
+     * @return  self
+     */ 
+    public function setCategory($category)
+    {
+        $this->category = $category;
 
         return $this;
     }

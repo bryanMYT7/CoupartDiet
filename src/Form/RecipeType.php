@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
+
 class RecipeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -20,10 +21,12 @@ class RecipeType extends AbstractType
             ->add('content', TextareaType::class,["label" => "Description", "required" => true])
             ->add('preparation_Time',IntegerType::class, ["label" => "Temps de préaparation (en min)", "required" => true])
             ->add('preparation_Cook',IntegerType::class, ["label" => "Temps de cuisson (en min)", "required" => true])
-            ->add('ingredients',TextType::class, ["label" => "Ingrédients", "required" => true])
+            ->add('ingredients',TextareaType::class, ["label" => "Ingrédients", "required" => true])
             ->add('steps',TextareaType::class, ["label" => "Étapes", "required" => true])
             ->add('allergens',TextType::class, ["label" => "Liste des Allergènes", "required" => false])
             ->add('regimes',TextType::class, ["label" => "Type de régime", "required" => false])
+            ->add('category',TextType::class, ["label" => "Category", "required" => false])
+
         ;
     }
 

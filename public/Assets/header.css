@@ -1,0 +1,48 @@
+/**Colors**/
+/* SCSS RGB *
+$caf-noir: rgba(86, 58, 34, 1);
+$lion: rgba(196, 158, 114, 1);
+$silver: rgba(172, 161, 156, 1);
+$platinum: rgba(219, 219, 219, 1);
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+header{
+    height: calc(63vh + 25px);
+    background-image: url("/Assets/images/background_1.jpg");
+    background-size: 1440px;
+    background-position-y: -150px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*NavTop*/
+.NavTop{
+    font-size: calc(2.3em - 5px);
+}
+.NavTop button {
+    color: rgba(86, 58, 34, 1);
+    font-weight: 800;
+    font-size: calc(0.8em - 5px);
+} 
+/*NavBop*/
+.NavBot{
+    padding-bottom: 2em;
+    font-size: calc(2.4em - 10px);
+}
+.NavBot a{
+    color:rgba(196, 158, 114, 1);
+    text-shadow: 2px 2px 1px rgba(86, 58, 34, 1);
+}
+
+/*BrandNav*/
+.BrandNav{
+    padding: 0.5em;
+    font-size: calc(6em - 15px);
+    color: rgba(172, 161, 156, 1);
+    text-shadow: 2px 2px 1px rgba(86, 58, 34, 1);
+}
+/*logo*/
+.logo img{
+    height:22vh;
+    width: auto;
+}
+

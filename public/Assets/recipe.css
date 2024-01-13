@@ -1,0 +1,40 @@
+/**Colors**/
+/* SCSS RGB *
+$caf-noir: rgba(86, 58, 34, 1);
+$lion: rgba(196, 158, 114, 1);
+$silver: rgba(172, 161, 156, 1);
+$platinum: rgba(219, 219, 219, 1);
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.SectRecipeWrapp{
+    height: 100vh;
+    
+}
+.RecipeWrapp {
+    height: 60vh;
+}
+
+/*ElemIcons*/
+.ElemIcons {
+    margin: 1em;
+    padding: 1em;
+}
+.ElemIcons i{
+    font-size: calc(5em - 10px);
+}
+/*RecipDesc*/
+
+.RecipDesc {
+    background-color: rgba(219, 219, 219, 0.7);
+    margin: 1em;
+    height: 60vh;
+    padding:1em;
+}
+
+/**RecipeWrapping*/
+.WrappPrep{
+    margin: 1em;
+}
